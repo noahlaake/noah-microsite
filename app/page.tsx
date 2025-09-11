@@ -60,9 +60,9 @@ export default function Page() {
             <p className="text-emerald-400 font-semibold tracking-wide uppercase">
               U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
             </p>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Road to LA 2028: Partner<br className="hidden sm:block" /> with a Rising BMX Finalist
-            </h1>
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
+  Road to LA 2028: Partner<br className="hidden sm:block" /> with a Rising BMX Finalist
+</h1>
             <p className="mt-6 text-neutral-300 text-lg">
               European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
               Cups, and Worlds. Join the journey with authentic content, elite visibility, and performance-
