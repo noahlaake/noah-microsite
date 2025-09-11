@@ -121,9 +121,21 @@ export default function Page() {
           </div>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-  '/action1.jpg?v=3','/action2.jpg?v=3','/action3.jpg?v=3','/action4.jpg?v=3',
-  '/behind1.jpg?v=3','/behind2.jpg?v=3','/behind3.jpg?v=3','/lifestyle1.jpg?v=3',
+  '/media/action-1.jpg?v=1','/media/action-2.jpg?v=1','/media/action-3.jpg?v=1','/media/action-4.jpg?v=1',
+  '/media/behind-1.jpg?v=1','/media/behind-2.jpg?v=1','/media/behind-3.jpg?v=1','/media/lifestyle-1.jpg?v=1',
 ].map((src, i) => (
+  <figure key={i} className="group relative overflow-hidden rounded-2xl border border-neutral-800">
+    <Image
+      src={src}
+      alt={src}
+      width={800}
+      height={600}
+      unoptimized
+      className="h-56 w-full object-cover group-hover:scale-105 transition"
+    />
+  </figure>
+))}
+.map((src, i) => (
               <figure key={i} className="group relative overflow-hidden rounded-2xl border border-neutral-800">
                 <Image src={src} alt={src} width={800} height={600} className="h-56 w-full object-cover group-hover:scale-105 transition" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-sm text-neutral-200"></figcaption>
