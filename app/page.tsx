@@ -39,7 +39,7 @@ export default function Page() {
       </header>
 
       {/* Hero */}
-      <section className="relative">
+      <section className="relative min-h-[70vh]">
         <div className="absolute inset-0 -z-10">
           <Image
             src="/hero_noah.jpg"
