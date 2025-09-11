@@ -48,7 +48,7 @@ export default function Page() {
             src="/hero_noah.jpg?v=2"
             alt="BMX hero"
             fill
-            className="object-cover h-[70vh] object-[95%_10%]"
+            className="object-cover h-[70vh] object-[95%_5%]"
             priority
           />
           {/* darker on the left so text pops */}
