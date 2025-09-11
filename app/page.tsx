@@ -40,12 +40,12 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative min-h-[70vh]">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
           <Image
             src="/hero_noah.jpg"
             alt="BMX hero"
             fill
-            className="object-cover h-[70vh] object-[70%_40%]"
+            className="object-cover h-[70vh] object-[65%_50%]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
