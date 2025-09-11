@@ -40,7 +40,7 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative min-h-[70vh]">
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/hero_noah.jpg"
             alt="BMX hero"
