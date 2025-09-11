@@ -45,7 +45,7 @@ export default function Page() {
             src="/hero_noah.jpg"
             alt="BMX hero"
             fill
-            className="object-cover opacity-50 h-[70vh]"
+            className="object-cover h-[70vh] object-[70%_40%]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
