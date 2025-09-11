@@ -15,10 +15,11 @@ const partners = [
   'Fly Racing Gear',
   'Nike Sportswear',
   'Red Bull Energy Drink',
-  'Decathlon Retail',
+  'Decathlon',
   'Audi Quattro',
 ]
 
+// ↓↓↓ MAIN PAGE ↓↓↓
 export default function Page() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
@@ -27,7 +28,9 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 shadow-inner" />
-            <div className="text-sm uppercase tracking-widest text-neutral-300">Noah Raphael Laake</div>
+            <div className="text-sm uppercase tracking-widest text-neutral-300">
+              Noah Raphael Laake
+            </div>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
             <a href="#results" className="hover:text-white">Results</a>
@@ -40,24 +43,30 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative min-h-[70vh]">
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
+        <div className="absolute inset-0 z-0">
           <Image
-            src="/hero_noah.jpg"
+            src="/hero_noah.jpg?v=2"
             alt="BMX hero"
             fill
-            className="object-cover h-[70vh] object-[65%_50%]"
+            className="object-cover h-[70vh] object-[70%_40%]"
             priority
           />
+          {/* darker on the left so text pops */}
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
         </div>
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
-            <p className="text-emerald-400 font-semibold tracking-wide uppercase">U23 • Latvian National Team • Olympic Unit</p>
+            <p className="text-emerald-400 font-semibold tracking-wide uppercase">
+              U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
+            </p>
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Road to LA 2028: Partner with a Rising BMX Finalist
+              Road to LA 2028: Partner<br className="hidden sm:block" /> with a Rising BMX Finalist
             </h1>
             <p className="mt-6 text-neutral-300 text-lg">
-              European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World Cups, and Worlds. Join the journey with authentic content, elite visibility, and performance-driven storytelling.
+              European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
+              Cups, and Worlds. Join the journey with authentic content, elite visibility, and performance-
+              driven storytelling.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#contact" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
@@ -80,7 +89,10 @@ export default function Page() {
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold">Career Highlights</h2>
-            <p className="mt-2 text-neutral-400 max-w-2xl">A clear progression from national champion to European finalist — with eyes on World Cups, Worlds 2026 (Australia), and LA 2028 qualification.</p>
+            <p className="mt-2 text-neutral-400 max-w-2xl">
+              A clear progression from national champion to European finalist — with eyes on World Cups,
+              Worlds 2026 (Australia), and LA 2028 qualification.
+            </p>
           </div>
           <a href="#contact" className="text-emerald-400 hover:text-emerald-300 font-medium">Request full results →</a>
         </div>
@@ -95,13 +107,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Media Grid */}
+      {/* Media */}
       <section id="media" className="bg-neutral-900/30 border-y border-neutral-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
           <div className="flex items-end justify-between flex-wrap gap-6">
             <div>
               <h2 className="text-2xl sm:text-3xl font-semibold">Media Gallery</h2>
-              <p className="mt-2 text-neutral-400 max-w-2xl">High-quality action and behind-the-scenes content available for partner campaigns and social amplification.</p>
+              <p className="mt-2 text-neutral-400 max-w-2xl">
+                High-quality action and behind-the-scenes content available for partner campaigns and social amplification.
+              </p>
             </div>
             <a href="#contact" className="text-emerald-400 hover:text-emerald-300 font-medium">Request media kit →</a>
           </div>
@@ -112,9 +126,7 @@ export default function Page() {
             ].map((src, i) => (
               <figure key={i} className="group relative overflow-hidden rounded-2xl border border-neutral-800">
                 <Image src={src} alt={src} width={800} height={600} className="h-56 w-full object-cover group-hover:scale-105 transition" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-sm text-neutral-200">
-                  {/* optional caption */}
-                </figcaption>
+                <figcaption className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-sm text-neutral-200"></figcaption>
               </figure>
             ))}
           </div>
@@ -141,12 +153,19 @@ export default function Page() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl sm:text-4xl font-semibold">Let’s Build a Partnership</h2>
               <p className="mt-3 text-neutral-300 max-w-2xl">
-                Tell us your goals (reach, brand lift, content, hospitality) and we’ll tailor a package. Title, Core, and Starter tiers available — or custom.
+                Tell us your goals (reach, brand lift, content, hospitality) and we’ll tailor a package.
+                Title, Core, and Starter tiers available — or custom.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="mailto:partner@noahlaake.com" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"><Mail size={18}/> partner@noahlaake.com</a>
-                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition"><Instagram size={18}/> @noah.laake</a>
-                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition"><Youtube size={18}/> /@noahlaake</a>
+                <a href="mailto:partner@noahlaake.com" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
+                  <Mail size={18}/> partner@noahlaake.com
+                </a>
+                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition">
+                  <Instagram size={18}/> @noah.laake
+                </a>
+                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition">
+                  <Youtube size={18}/> /@noahlaake
+                </a>
               </div>
             </div>
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6">
