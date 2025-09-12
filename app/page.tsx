@@ -1,37 +1,19 @@
-'use client'
-import Image from 'next/image'
-import { Trophy, Camera, PlayCircle, Mail, Instagram, Youtube, ArrowRight } from '@/components/icons'
+// app/page.tsx
+import Image from "next/image";
 
-const results = [
-  { year: 2025, event: 'UEC European Championships — Men U23', place: '8th (Final)' },
-  { year: 2025, event: 'Latvian National Championships — Men U23', place: '2nd (Vice-Champion)' },
-  { year: 2024, event: 'UEC European Cup — Valmiera', place: '3rd' },
-  { year: 2017, event: 'Latvian National Championships — Boys 12', place: '1st (Champion)' },
-]
-
-const partners = [
-  'Bell Helmets',
-  'Speedco Bikes',
-  'Fly Racing Gear',
-  'Nike Sportswear',
-  'Red Bull Energy Drink',
-  'Decathlon',
-  'Audi Quattro',
-]
-
-// ↓↓↓ MAIN PAGE ↓↓↓
 export default function Page() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
-      {/* Nav */}
+      {/* Top nav */}
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 bg-neutral-950/80 border-b border-neutral-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 shadow-inner" />
-            <div className="text-sm uppercase tracking-widest text-neutral-300">
-              Noah Raphael Laake
-            </div>
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-4 w-4 rounded-full bg-emerald-400" />
+            <span className="text-sm text-neutral-300 tracking-widest">
+              NOAH RAPHAEL LAAKE
+            </span>
           </div>
+
           <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
             <a href="#results" className="hover:text-white">Results</a>
             <a href="#media" className="hover:text-white">Media</a>
@@ -43,160 +25,187 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative min-h-[70vh]">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero_noah.jpg?v=2"
-            alt="BMX hero"
-            fill
-            className="object-cover h-[70vh] object-[90%_20%]"
-            priority
-          />
-          {/* darker on the left so text pops */}
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/40 to-transparent" />
-        </div>
+        {/* background image */}
+        <Image
+          src="/hero_noah.jpg"
+          alt="Noah Laake racing"
+          fill
+          priority
+          className="object-cover object-[55%_35%] select-none"
+        />
+        {/* dark gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-36">
-          <div className="max-w-3xl">
-            <p className="text-emerald-400 font-semibold tracking-wide uppercase">
-              U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
-            </p>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
-  Road to LA 2028: Partner<br className="hidden sm:block" /> with a Rising BMX Finalist
-</h1>
-            <p className="mt-6 text-neutral-300 text-lg">
-              European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
-              Cups, and Worlds. Join the journey with authentic content, elite visibility, and performance-
-              driven storytelling.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
-                Become a Partner <ArrowRight size={18} />
-              </a>
-              <a href="#media" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition">
-                View Media <PlayCircle size={18} />
-              </a>
+        {/* content */}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+          <p className="text-xs font-semibold tracking-widest text-emerald-300">
+            U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
+          </p>
+
+          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
+            Road to LA 2028: Partner<br className="hidden sm:block" />
+            with a Rising BMX Finalist
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-neutral-300">
+            European Championships Finalist (8th, 2025). Competing across UEC
+            European Cup, UCI World Cups, and Worlds. Join the journey with
+            authentic content, elite visibility, and performance-driven
+            storytelling.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+            >
+              Become a Partner →
+            </a>
+            <a
+              href="#media"
+              className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+            >
+              View Media
+            </a>
+          </div>
+
+          <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+            <div className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+              2025 UEC Finalist
             </div>
-            <div className="mt-8 flex items-center gap-6 text-neutral-300 text-sm">
-              <div className="flex items-center gap-2"><Trophy size={18} className="text-emerald-400" /> 2025 UEC Finalist</div>
-              <div className="flex items-center gap-2"><Camera size={18} className="text-emerald-400" /> Content-ready athlete</div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+              Content-ready athlete
             </div>
           </div>
         </div>
       </section>
 
-      {/* Results */}
-      <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="flex items-end justify-between flex-wrap gap-6">
+      {/* Career Highlights (short) */}
+      <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-2xl font-semibold">Career Highlights</h2>
+        <p className="mt-3 max-w-3xl text-neutral-300">
+          A clear progression from national champion to European finalist — with
+          eyes on World Cups, Worlds 2026 (Australia), and LA 2028 qualification.
+        </p>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["2025", "UEC BMX Racing European Championships — U23 Final (8th)"],
+            ["2024–2025", "Multiple European Cup mains & semis; World Cup debut (Papendal)"],
+            ["2017–2023", "National titles, Baltic Cup Overall, consistent international starts"],
+          ].map(([year, line]) => (
+            <div key={year} className="rounded-2xl border border-neutral-800 p-5">
+              <div className="text-sm text-neutral-400">{year}</div>
+              <div className="mt-1 text-neutral-100">{line}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
+            Request full results →
+          </a>
+        </div>
+      </section>
+
+      {/* Media Gallery */}
+      <section id="media" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-semibold">Career Highlights</h2>
-            <p className="mt-2 text-neutral-400 max-w-2xl">
-              A clear progression from national champion to European finalist — with eyes on World Cups,
-              Worlds 2026 (Australia), and LA 2028 qualification.
+            <h2 className="text-2xl font-semibold">Media Gallery</h2>
+            <p className="mt-2 max-w-3xl text-neutral-300">
+              High-quality action and behind-the-scenes content available for
+              partner campaigns and social amplification.
             </p>
           </div>
-          <a href="#contact" className="text-emerald-400 hover:text-emerald-300 font-medium">Request full results →</a>
+          <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
+            Request media kit →
+          </a>
         </div>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {results.map((r, i) => (
-            <div key={i} className="rounded-2xl bg-neutral-900/60 border border-neutral-800 p-5 hover:border-neutral-700 transition">
-              <div className="text-sm text-neutral-400">{r.year}</div>
-              <div className="mt-2 font-medium">{r.event}</div>
-              <div className="mt-2 text-emerald-400 font-semibold">{r.place}</div>
-            </div>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            "/media/action-1.jpg?ts=1",
+            "/media/action-2.jpg?ts=1",
+            "/media/action-3.jpg?ts=1",
+            "/media/action-4.jpg?ts=1",
+            "/media/behind-1.jpg?ts=1",
+            "/media/behind-2.jpg?ts=1",
+            "/media/behind-3.jpg?ts=1",
+            "/media/lifestyle-1.jpg?ts=1",
+          ].map((src, i) => (
+            <figure
+              key={i}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-800"
+            >
+              {/* Using plain <img> to avoid any optimizer/config edge cases */}
+              <img
+                src={src}
+                alt={`gallery-${i + 1}`}
+                loading="lazy"
+                className="h-56 w-full object-cover transition group-hover:scale-105"
+              />
+            </figure>
           ))}
         </div>
       </section>
 
-      {/* Media */}
-      <section id="media" className="bg-neutral-900/30 border-y border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-          <div className="flex items-end justify-between flex-wrap gap-6">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold">Media Gallery</h2>
-              <p className="mt-2 text-neutral-400 max-w-2xl">
-                High-quality action and behind-the-scenes content available for partner campaigns and social amplification.
-              </p>
-            </div>
-            <a href="#contact" className="text-emerald-400 hover:text-emerald-300 font-medium">Request media kit →</a>
-          </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-  '/media/action-1.jpg?v=1','/media/action-2.jpg?v=1','/media/action-3.jpg?v=1','/media/action-4.jpg?v=1',
-  '/media/behind-1.jpg?v=1','/media/behind-2.jpg?v=1','/media/behind-3.jpg?v=1','/media/lifestyle-1.jpg?v=1',
-].map((src, i) => (
-  <figure key={i} className="group relative overflow-hidden rounded-2xl border border-neutral-800">
-    <Image
-      src={src}
-      alt={src}
-      width={800}
-      height={600}
-      unoptimized
-      className="h-56 w-full object-cover group-hover:scale-105 transition"
-    />
-  </figure>
-))}
-.map((src, i) => (
-              <figure key={i} className="group relative overflow-hidden rounded-2xl border border-neutral-800">
-                <Image src={src} alt={src} width={800} height={600} className="h-56 w-full object-cover group-hover:scale-105 transition" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-sm text-neutral-200"></figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Desired Partners */}
+      <section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-2xl font-semibold">Desired Partners</h2>
+        <p className="mt-2 max-w-3xl text-neutral-300">
+          Room for 1 Title, 3–5 Core, and several Starter partners — with tiered
+          deliverables and clear placement mockups.
+        </p>
 
-      {/* Partners */}
-      <section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <h2 className="text-2xl sm:text-3xl font-semibold">Desired Partners</h2>
-        <p className="mt-2 text-neutral-400">Room for 1 Title, 3–5 Core, and several Starter partners — with tiered deliverables and clear placement mockups.</p>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 items-center text-neutral-300">
-          {partners.map((p, i) => (
-            <div key={i} className="flex items-center justify-center rounded-2xl bg-neutral-900/60 border border-neutral-800 p-6 text-center text-sm sm:text-base font-medium">
-              {p}
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            "Bell Helmets",
+            "Speedco Bikes",
+            "Fly Racing Gear",
+            "Nike Sportswear",
+            "Red Bull",
+            "Decathlon",
+            "Audi quattro",
+          ].map((name) => (
+            <div key={name} className="rounded-2xl border border-neutral-800 p-6">
+              <div className="text-neutral-100">{name}</div>
+              <div className="mt-1 text-sm text-neutral-400">Prospective partner</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-gradient-to-br from-neutral-900 to-neutral-950 border-t border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl sm:text-4xl font-semibold">Let’s Build a Partnership</h2>
-              <p className="mt-3 text-neutral-300 max-w-2xl">
-                Tell us your goals (reach, brand lift, content, hospitality) and we’ll tailor a package.
-                Title, Core, and Starter tiers available — or custom.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="mailto:partner@noahlaake.com" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
-                  <Mail size={18}/> partner@noahlaake.com
-                </a>
-                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition">
-                  <Instagram size={18}/> @noah.laake
-                </a>
-                <a href="#" className="inline-flex items-center gap-2 rounded-2xl border border-neutral-700 px-5 py-3 font-medium text-neutral-200 hover:bg-neutral-900 transition">
-                  <Youtube size={18}/> /@noahlaake
-                </a>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6">
-              <h3 className="font-semibold">Quick Facts</h3>
-              <ul className="mt-3 space-y-2 text-neutral-300 text-sm">
-                <li>• Men U23, Latvian National Team</li>
-                <li>• 2025 European Championships Finalist (8th)</li>
-                <li>• 2025 National Vice-Champion</li>
-                <li>• Content-ready media kit</li>
-                <li>• Target: Worlds 2026 (AUS) & LA 2028</li>
-              </ul>
-            </div>
+      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="rounded-2xl border border-neutral-800 p-8 bg-neutral-900/40">
+          <h2 className="text-2xl font-semibold">Let’s talk</h2>
+          <p className="mt-2 max-w-2xl text-neutral-300">
+            Interested in partnering or requesting the full results & media kit?
+            Drop a line and we’ll respond quickly.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a
+              href="mailto:eric.laakee@gmail.com?subject=Noah%20Laake%20—%20Sponsorship"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+            >
+              Email the team
+            </a>
+            <a
+              href="#media"
+              className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+            >
+              Review media
+            </a>
           </div>
         </div>
       </section>
 
-      <footer className="py-10 text-center text-neutral-500 text-sm border-t border-neutral-800">
-        © {new Date().getFullYear()} Noah Raphael Laake — Sponsor Microsite
+      <footer className="py-10 text-center text-sm text-neutral-500">
+        © {new Date().getFullYear()} Noah Raphael Laake
       </footer>
     </div>
-  )
+  );
 }
