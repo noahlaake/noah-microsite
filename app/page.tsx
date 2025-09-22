@@ -92,8 +92,8 @@ export default function Page() {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            ["2025", "UEC BMX Racing European Championships — U23 Final (8th)"],
-            ["2024–2025", "Multiple European Cup mains & semis; World Cup debut (Papendal)"],
+            ["2025", "UEC BMX Racing European Championships — U23 Final (8th)"; U23 National Vice-Champion],
+            ["2024–2025", "Multiple European Cup semis and one podium; World Cup Elite debut (Papendal)"],
             ["2017–2023", "National titles, Baltic Cup Overall, consistent international starts"],
           ].map(([year, line]) => (
             <div key={year} className="rounded-2xl border border-neutral-800 p-5">
