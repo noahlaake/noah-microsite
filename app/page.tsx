@@ -42,9 +42,9 @@ export default function Page() {
     style={{
       // spotlight shape & position — adjust the %s to move/resize
       WebkitMaskImage:
-        'radial-gradient(44% 40% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+        'radial-gradient(64% 60% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       maskImage:
-        'radial-gradient(44% 40% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+        'radial-gradient(64% 60% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       // gentle brighten so it never overexposes
       backdropFilter: 'brightness(1.50) contrast(1.03)',
     }}
