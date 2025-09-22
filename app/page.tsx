@@ -126,29 +126,29 @@ export default function Page() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  {[
-    "/action-1.jpg",
-    "/action-2.jpg",
-    "/action-3.jpg",
-    "/action-4.jpg",
-    "/behind-1.jpg",
-    "/behind-2.jpg",
-    "/behind-3.jpg",
-    "/lifestyle-1.jpg",
-  ].map((src, i) => (
-    <figure
-      key={i}
-      className="group relative overflow-hidden rounded-2xl border border-neutral-800"
-    >
-      <img
-        src={src}
-        alt={`gallery-${i + 1}`}
-        loading="lazy"
-        className="h-56 w-full object-cover transition group-hover:scale-105"
-      />
-    </figure>
-  ))}
-</div>
+          {[
+            "/action-1.jpg",
+            "/action-2.jpg",
+            "/action-3.jpg",
+            "/action-4.jpg",
+            "/behind-1.jpg",
+            "/behind-2.jpg",
+            "/behind-3.jpg",
+            "/lifestyle-1.jpg",
+          ].map((src, i) => (
+            <figure
+              key={i}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-800"
+            >
+              <img
+                src={src}
+                alt={`gallery-${i + 1}`}
+                loading="lazy"
+                className="h-56 w-full object-cover transition group-hover:scale-105"
+              />
+            </figure>
+          ))}
+        </div>
       </section>
 
       {/* Desired Partners */}
