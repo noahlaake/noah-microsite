@@ -24,7 +24,7 @@ export default function Page() {
 
 {/* Hero */}
 <section className="relative min-h-[70vh]">
-  {/* Base background image */}
+  {/* background image */}
   <Image
     src="/hero_noah.jpg"
     alt="Noah Laake racing"
@@ -33,27 +33,30 @@ export default function Page() {
     className="object-cover object-[55%_35%] select-none"
   />
 
-  {/* Subtle dark gradient for readability */}
-  <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/45 via-neutral-950/30 to-neutral-950/70" />
+  {/* readability gradient */}
+  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
 
-  {/* SUBJECT BRIGHTEN: duplicate image, brightened + masked to Noah only */}
-  <Image
-    src="/hero_noah.jpg"
-    alt=""                 // decorative (screen readers already got the base img)
-    aria-hidden
-    fill
-    priority
-    className="pointer-events-none object-cover object-[55%_35%] [filter:brightness(1.22)_contrast(1.06)_saturate(1.05)]"
+  {/* spotlight: brighten Noah only (soft white using screen blend) */}
+  <div
+    className="absolute inset-0 pointer-events-none mix-blend-screen opacity-90"
     style={{
-      // Elliptical feathered mask; white = visible, transparent = hidden
-      WebkitMaskImage:
-        'radial-gradient(34% 28% at 68% 42%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 45%, rgba(255,255,255,0) 75%)',
-      maskImage:
-        'radial-gradient(34% 28% at 68% 42%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 45%, rgba(255,255,255,0) 75%)',
+      background:
+        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,0) 75%)',
     }}
   />
 
-  {/* Content */}
+  {/* darken everything outside the spotlight */}
+  <div
+    className="absolute inset-0 pointer-events-none bg-black/52"
+    style={{
+      WebkitMaskImage:
+        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 44%, rgba(255,255,255,1) 76%)',
+      maskImage:
+        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 44%, rgba(255,255,255,1) 76%)',
+    }}
+  />
+
+  {/* content */}
   <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
     <p className="text-xs font-semibold tracking-widest text-emerald-300">
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
@@ -65,10 +68,9 @@ export default function Page() {
     </h1>
 
     <p className="mt-6 max-w-2xl text-neutral-300">
-      European Championships Finalist (8th, 2025). Competing across UEC
-      European Cup, UCI World Cups, and Worlds. Join the journey with
-      authentic content, elite visibility, and performance-driven
-      storytelling.
+      European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
+      Cups, and Worlds. Join the journey with authentic content, elite visibility, and
+      performance-driven storytelling.
     </p>
 
     <div className="mt-8 flex flex-wrap items-center gap-4">
