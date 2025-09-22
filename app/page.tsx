@@ -23,64 +23,85 @@ export default function Page() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative min-h-[70vh]">
-        {/* background image */}
-        <Image
-          src="/hero_noah.jpg"
-          alt="Noah Laake racing"
-          fill
-          priority
-          className="object-cover object-[55%_35%] select-none"
-        />
-        {/* dark gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
+{/* Hero */}
+<section className="relative min-h-[70vh] overflow-hidden">
+  {/* background image */}
+  <Image
+    src="/hero_noah.jpg"
+    alt="Noah Laake racing"
+    fill
+    priority
+    className="object-cover object-[55%_35%] select-none"
+  />
 
-        {/* content */}
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-          <p className="text-xs font-semibold tracking-widest text-emerald-300">
-            U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
-          </p>
+  {/* base vertical gradient for general readability */}
+  <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-neutral-950/30 to-neutral-950/80 pointer-events-none" />
 
-          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
-            Road to LA 2028: Partner<br className="hidden sm:block" />
-            with a Rising BMX Finalist
-          </h1>
+  {/* vignette: darken everything except a circle around Noah */}
+  <div
+    className="absolute inset-0 pointer-events-none"
+    style={{
+      // Move the spotlight by changing the 'at 75% 45%' coordinates (X Y).
+      background:
+        'radial-gradient(closest-side at 75% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0.55) 70%)',
+    }}
+  />
 
-          <p className="mt-6 max-w-2xl text-neutral-300">
-            European Championships Finalist (8th, 2025). Competing across UEC
-            European Cup, UCI World Cups, and Worlds. Join the journey with
-            authentic content, elite visibility, and performance-driven
-            storytelling.
-          </p>
+  {/* subtle spotlight: gently brighten Noah */}
+  <div
+    className="absolute inset-0 mix-blend-screen pointer-events-none"
+    style={{
+      // Same center as vignette so the bright area matches
+      background:
+        'radial-gradient(closest-side at 75% 45%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 55%)',
+    }}
+  />
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
-            >
-              Become a Partner →
-            </a>
-            <a
-              href="#media"
-              className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
-            >
-              View Media
-            </a>
-          </div>
+  {/* content */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    <p className="text-xs font-semibold tracking-widest text-emerald-300">
+      U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
+    </p>
 
-          <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              2025 UEC Finalist
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              Content-ready athlete
-            </div>
-          </div>
-        </div>
-      </section>
+    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
+      Road to LA 2028: Partner<br className="hidden sm:block" />
+      with a Rising BMX Finalist
+    </h1>
+
+    <p className="mt-6 max-w-2xl text-neutral-300">
+      European Championships Finalist (8th, 2025). Competing across UEC
+      European Cup, UCI World Cups, and Worlds. Join the journey with
+      authentic content, elite visibility, and performance-driven
+      storytelling.
+    </p>
+
+    <div className="mt-8 flex flex-wrap items-center gap-4">
+      <a
+        href="#contact"
+        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+      >
+        Become a Partner →
+      </a>
+      <a
+        href="#media"
+        className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+      >
+        View Media
+      </a>
+    </div>
+
+    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+      <div className="flex items-center gap-2">
+        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+        2025 UEC Finalist
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+        Content-ready athlete
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Career Highlights (short) */}
       <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
