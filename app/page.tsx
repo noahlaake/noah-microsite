@@ -126,35 +126,42 @@ export default function Page() {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
   {[
-    "/media/action-1.jpg?ts=1",
-    "/media/action-2.jpg?ts=1",
-    "/media/action-3.jpg?ts=1",
-    "/media/action-4.jpg?ts=1",
-    "/media/behind-1.jpg?ts=1",
-    "/media/behind-2.jpg?ts=1",
-    "/media/behind-3.jpg?ts=1",
-    "/media/lifestyle-1.jpg?ts=1",
-  ].map((src, i) => {
-    const href = src.replace("?ts=1", ""); // open the clean URL (no cache-buster) in new tab
-    return (
+  "/media/action-1.jpg?ts=1",
+  "/media/action-2.jpg?ts=1",
+  "/media/action-3.jpg?ts=1",
+  "/media/action-4.jpg?ts=1",
+  "/media/behind-1.jpg?ts=1",
+  "/media/behind-2.jpg?ts=1",
+  "/media/behind-3.jpg?ts=1",
+  "/media/lifestyle-1.jpg?ts=1",
+].map((src, i) => {
+  const href = src.replace("?ts=1", ""); // open clean URL
+  return (
+    <figure
+      key={i}
+      className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]"
+    >
+      {/* image fills the tile */}
+      <img
+        src={src}
+        alt={`gallery-${i + 1}`}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105"
+      />
+
+      {/* click overlay covers the whole card */}
       <a
-        key={i}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className="absolute inset-0 z-10 block"
+        aria-label={`Open image ${i + 1} in a new tab`}
       >
-        <figure className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]">
-          <img
-            src={src}
-            alt={`gallery-${i + 1}`}
-            loading="lazy"
-            className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-          />
-        </figure>
+        <span className="sr-only">Open full image</span>
       </a>
-    );
-  })}
+    </figure>
+  );
+})}
 </div>
       </section>
 
