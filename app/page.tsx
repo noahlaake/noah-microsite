@@ -42,11 +42,11 @@ export default function Page() {
     style={{
       // spotlight shape & position — adjust the %s to move/resize
       WebkitMaskImage:
-        'radial-gradient(24% 20% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+        'radial-gradient(34% 30% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       maskImage:
         'radial-gradient(24% 20% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       // gentle brighten so it never overexposes
-      backdropFilter: 'brightness(1.18) contrast(1.03)',
+      backdropFilter: 'brightness(1.25) contrast(1.03)',
     }}
   />
 
