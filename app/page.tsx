@@ -23,7 +23,7 @@ export default function Page() {
       </header>
 
 {/* Hero */}
-<section className="relative min-h-[70vh]">
+      <section className="relative min-h-[70vh]">
   {/* background image */}
   <Image
     src="/hero_noah.jpg"
@@ -36,23 +36,28 @@ export default function Page() {
   {/* readability gradient */}
   <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
 
-  {/* spotlight: brighten Noah only (soft white using screen blend) */}
+  {/* BRIGHTEN ONLY NOAH — masked backdrop filter (natural, no white blob) */}
   <div
-    className="absolute inset-0 pointer-events-none mix-blend-screen opacity-90"
+    className="absolute inset-0 pointer-events-none"
     style={{
-      background:
-        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,0) 75%)',
+      // spotlight shape & position — adjust the %s to move/resize
+      WebkitMaskImage:
+        'radial-gradient(24% 20% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+      maskImage:
+        'radial-gradient(24% 20% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+      // gentle brighten so it never overexposes
+      backdropFilter: 'brightness(1.18) contrast(1.03)',
     }}
   />
 
-  {/* darken everything outside the spotlight */}
+  {/* DARKEN OUTSIDE THE SPOTLIGHT */}
   <div
-    className="absolute inset-0 pointer-events-none bg-black/52"
+    className="absolute inset-0 pointer-events-none bg-black/55"
     style={{
       WebkitMaskImage:
-        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 44%, rgba(255,255,255,1) 76%)',
+        'radial-gradient(26% 22% at 68% 42%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,1) 76%)',
       maskImage:
-        'radial-gradient(30% 24% at 68% 42%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 44%, rgba(255,255,255,1) 76%)',
+        'radial-gradient(26% 22% at 68% 42%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,1) 76%)',
     }}
   />
 
