@@ -28,8 +28,11 @@ a { @apply underline-offset-4; }
 /* Fallback for browsers without text-stroke (e.g., Firefox) */
 @supports not (-webkit-text-stroke: 2px black) {
   .headline-stroke {
-    text-shadow:
-      1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
-      1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-  }
+  --stroke: 1.75px;           /* try 1.5–2px range */
+  text-shadow:
+    0 0 0 var(--stroke) #000,
+    0 0 0 var(--stroke) #000,
+    0 0 0 var(--stroke) #000,
+    0 0 0 var(--stroke) #000;
+}
 }
