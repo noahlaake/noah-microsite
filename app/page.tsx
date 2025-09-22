@@ -126,29 +126,37 @@ export default function Page() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "/action-1.jpg",
-            "/action-2.jpg",
-            "/action-3.jpg",
-            "/action-4.jpg",
-            "/behind-1.jpg",
-            "/behind-2.jpg",
-            "/behind-3.jpg",
-            "/lifestyle-1.jpg",
-          ].map((src, i) => (
-            <figure
-              key={i}
-              className="group relative overflow-hidden rounded-2xl border border-neutral-800"
-            >
-              <img
-                src={src}
-                alt={`gallery-${i + 1}`}
-                loading="lazy"
-                className="h-56 w-full object-cover transition group-hover:scale-105"
-              />
-            </figure>
-          ))}
-        </div>
+  {[
+    "/media/action-1.jpg?ts=1",
+    "/media/action-2.jpg?ts=1",
+    "/media/action-3.jpg?ts=1",
+    "/media/action-4.jpg?ts=1",
+    "/media/behind-1.jpg?ts=1",
+    "/media/behind-2.jpg?ts=1",
+    "/media/behind-3.jpg?ts=1",
+    "/media/lifestyle-1.jpg?ts=1",
+  ].map((src, i) => {
+    const href = src.replace("?ts=1", ""); // open the clean URL (no cache-buster) in new tab
+    return (
+      <a
+        key={i}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <figure className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]">
+          <img
+            src={src}
+            alt={`gallery-${i + 1}`}
+            loading="lazy"
+            className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+          />
+        </figure>
+      </a>
+    );
+  })}
+</div>
       </section>
 
       {/* Desired Partners */}
