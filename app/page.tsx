@@ -22,75 +22,82 @@ export default function Page() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative min-h-[70vh]">
-        {/* background image */}
-        <Image
-          src="/hero_noah.jpg"
-          alt="Noah Laake racing"
-          fill
-          priority
-          className="object-cover object-[55%_35%] select-none"
-        />
+{/* Hero */}
+<section className="relative min-h-[70vh]">
+  {/* Base background image */}
+  <Image
+    src="/hero_noah.jpg"
+    alt="Noah Laake racing"
+    fill
+    priority
+    className="object-cover object-[55%_35%] select-none"
+  />
 
-        {/* spotlight overlay that brightens Noah and darkens surroundings */}
-        <div
-          className="pointer-events-none absolute inset-0 mix-blend-screen"
-          style={{
-            background:
-              // adjust the 'at 68% 42%' to move the bright spot if needed
-              "radial-gradient(45% 35% at 68% 42%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 30%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.9) 100%)",
-          }}
-        />
-        {/* base fade so headline stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/30 via-transparent to-neutral-950/80" />
+  {/* Subtle dark gradient for readability */}
+  <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/45 via-neutral-950/30 to-neutral-950/70" />
 
-        {/* content */}
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-          <p className="text-xs font-semibold tracking-widest text-emerald-300">
-            U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
-          </p>
+  {/* SUBJECT BRIGHTEN: duplicate image, brightened + masked to Noah only */}
+  <Image
+    src="/hero_noah.jpg"
+    alt=""                 // decorative (screen readers already got the base img)
+    aria-hidden
+    fill
+    priority
+    className="pointer-events-none object-cover object-[55%_35%] [filter:brightness(1.22)_contrast(1.06)_saturate(1.05)]"
+    style={{
+      // Elliptical feathered mask; white = visible, transparent = hidden
+      WebkitMaskImage:
+        'radial-gradient(34% 28% at 68% 42%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 45%, rgba(255,255,255,0) 75%)',
+      maskImage:
+        'radial-gradient(34% 28% at 68% 42%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 45%, rgba(255,255,255,0) 75%)',
+    }}
+  />
 
-          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            Road to LA 2028: Partner
-            <br className="hidden sm:block" />
-            with a Rising BMX Finalist
-          </h1>
+  {/* Content */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    <p className="text-xs font-semibold tracking-widest text-emerald-300">
+      U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
+    </p>
 
-          <p className="mt-6 max-w-2xl text-neutral-300">
-            European Championships Finalist (8th, 2025). Competing across UEC
-            European Cup, UCI World Cups, and Worlds. Join the journey with
-            authentic content, elite visibility, and performance-driven
-            storytelling.
-          </p>
+    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
+      Road to LA 2028: Partner<br className="hidden sm:block" />
+      with a Rising BMX Finalist
+    </h1>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
-            >
-              Become a Partner →
-            </a>
-            <a
-              href="#media"
-              className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
-            >
-              View Media
-            </a>
-          </div>
+    <p className="mt-6 max-w-2xl text-neutral-300">
+      European Championships Finalist (8th, 2025). Competing across UEC
+      European Cup, UCI World Cups, and Worlds. Join the journey with
+      authentic content, elite visibility, and performance-driven
+      storytelling.
+    </p>
 
-          <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              2025 UEC Finalist
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              Content-ready athlete
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="mt-8 flex flex-wrap items-center gap-4">
+      <a
+        href="#contact"
+        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+      >
+        Become a Partner →
+      </a>
+      <a
+        href="#media"
+        className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+      >
+        View Media
+      </a>
+    </div>
+
+    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+      <div className="flex items-center gap-2">
+        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+        2025 UEC Finalist
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+        Content-ready athlete
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Career Highlights */}
       <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
