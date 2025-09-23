@@ -42,9 +42,9 @@ export default function Page() {
 {/* soft spotlight to keep Noah brighter */}
 <div
   className="pointer-events-none absolute inset-0 z-10
-             [mask-image:radial-gradient(40%_34%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]"
+             [mask-image:radial-gradient(70%_64%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]"
 >
-  <div className="absolute inset-0 [filter:brightness(1.18)]" />
+  <div className="absolute inset-0 [filter:brightness(1.50)_contrast(1.05)_saturate(1.06)]" />
 </div>
 
     {/* DARKEN OUTSIDE THE SPOTLIGHT */}
