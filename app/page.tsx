@@ -26,12 +26,25 @@ export default function Page() {
       <section className="relative min-h-[70vh]">
   {/* background image */}
   <Image
-    src="/hero_noah.jpg"
-    alt="Noah Laake racing"
-    fill
-    priority
-    className="object-cover object-[55%_35%] select-none"
-  />
+    {/* darken the whole scene a little more */}
+<div className="absolute inset-0 bg-black/60" />
+
+{/* darker toward the bottom so the text pops */}
+<div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/75 to-black/90" />
+
+{/* soft spotlight to keep Noah brighter */}
+<div className="
+  pointer-events-none absolute inset-0
+  [mask-image:radial-gradient(40%_34%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]
+">
+  <div className="absolute inset-0 [filter:brightness(1.18)]" />
+</div>
+  src="/hero_noah.jpg"
+  alt="Noah Laake racing"
+  fill
+  priority
+  className="object-cover object-[55%_35%] select-none"
+/>
 
   {/* readability gradient */}
   <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
@@ -42,11 +55,11 @@ export default function Page() {
     style={{
       // spotlight shape & position — adjust the %s to move/resize
       WebkitMaskImage:
-        'radial-gradient(64% 60% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+        'radial-gradient(84% 80% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       maskImage:
-        'radial-gradient(64% 60% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
+        'radial-gradient(84% 80% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
       // gentle brighten so it never overexposes
-      backdropFilter: 'brightness(1.50) contrast(1.03)',
+      backdropFilter: 'brightness(1.60) contrast(1.03)',
     }}
   />
 
