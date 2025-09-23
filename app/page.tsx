@@ -23,36 +23,41 @@ export default function Page() {
       </header>
 
 {/* Hero */}
-      <section className="relative min-h-[70vh]">
+<section className="relative min-h-[70vh]">
   {/* background image */}
-<Image
-  src="/hero_noah.jpg"
-  alt="Noah Laake racing"
-  fill
-  priority
-  className="object-cover object-[55%_35%] select-none z-0"
-/>
+  <Image
+    src="/hero_noah.jpg"
+    alt="Noah Laake racing"
+    fill
+    priority
+    className="object-cover object-[55%_35%] select-none"
+  />
 
-{/* darken the whole scene a little more */}
-<div className="absolute inset-0 bg-black/60 z-10" />
+  {/* base darken (BELOW spotlight) */}
+  <div className="absolute inset-0 z-10 bg-black/55" />
+  <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 via-black/70 to-black/90" />
 
-{/* darker toward the bottom so the text pops */}
-<div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/75 to-black/90 z-10" />
+  {/* SPOTLIGHT — must be ABOVE the dark overlays, BELOW the text */}
+  <div
+    className="absolute inset-0 z-20 pointer-events-none"
+    style={{
+      // size of the spotlight ellipse (make these bigger for bigger spotlight)
+      WebkitMaskImage:
+        'radial-gradient(42% 36% at 66% 48%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
+      maskImage:
+        'radial-gradient(42% 36% at 66% 48%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
 
-{/* soft spotlight on Noah */}
-<div
-  className="pointer-events-none absolute inset-0"
-  style={{
-    // size (first two %), position (the “at x% y%”)
-    WebkitMaskImage:
-      'radial-gradient(42% 34% at 64% 46%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
-    maskImage:
-      'radial-gradient(42% 34% at 64% 46%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
-  }}
->
-  {/* how bright Noah is inside the spotlight */}
-  <div className="absolute inset-0 [filter:brightness(1.16)]" />
-</div>
+      // brightness inside the spotlight
+      backdropFilter: 'brightness(1.35) contrast(1.05)',
+      WebkitBackdropFilter: 'brightness(1.35) contrast(1.05)',
+    }}
+  />
+
+  {/* TEXT — topmost */}
+  <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    {/* … your existing hero text/buttons exactly as before … */}
+  </div>
+</section>
 
     {/* DARKEN OUTSIDE THE SPOTLIGHT */}
   <div
