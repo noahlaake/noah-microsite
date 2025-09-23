@@ -39,12 +39,19 @@ export default function Page() {
 {/* darker toward the bottom so the text pops */}
 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/75 to-black/90 z-10" />
 
-{/* soft spotlight to keep Noah brighter */}
+{/* soft spotlight on Noah */}
 <div
-  className="pointer-events-none absolute inset-0 z-10
-             [mask-image:radial-gradient(15%_10%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]"
+  className="pointer-events-none absolute inset-0"
+  style={{
+    // size (first two %), position (the “at x% y%”)
+    WebkitMaskImage:
+      'radial-gradient(42% 34% at 64% 46%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
+    maskImage:
+      'radial-gradient(42% 34% at 64% 46%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
+  }}
 >
-  <div className="absolute inset-0 [filter:brightness(1.50)_contrast(1.05)_saturate(1.06)]" />
+  {/* how bright Noah is inside the spotlight */}
+  <div className="absolute inset-0 [filter:brightness(1.16)]" />
 </div>
 
     {/* DARKEN OUTSIDE THE SPOTLIGHT */}
