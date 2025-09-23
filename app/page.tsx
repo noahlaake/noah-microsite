@@ -33,42 +33,8 @@ export default function Page() {
     className="object-cover object-[55%_35%] select-none"
   />
 
-  {/* base darken (BELOW spotlight) */}
-  <div className="absolute inset-0 z-10 bg-black/55" />
-  <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 via-black/70 to-black/90" />
-
-  {/* SPOTLIGHT — must be ABOVE the dark overlays, BELOW the text */}
-  <div
-    className="absolute inset-0 z-20 pointer-events-none"
-    style={{
-      // size of the spotlight ellipse (make these bigger for bigger spotlight)
-      WebkitMaskImage:
-        'radial-gradient(42% 36% at 66% 48%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
-      maskImage:
-        'radial-gradient(42% 36% at 66% 48%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 100%)',
-
-      // brightness inside the spotlight
-      backdropFilter: 'brightness(1.35) contrast(1.05)',
-      WebkitBackdropFilter: 'brightness(1.35) contrast(1.05)',
-    }}
-  />
-
-  {/* TEXT — topmost */}
-  <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-    {/* … your existing hero text/buttons exactly as before … */}
-  </div>
-</section>
-
-    {/* DARKEN OUTSIDE THE SPOTLIGHT */}
-  <div
-    className="absolute inset-0 pointer-events-none bg-black/55"
-    style={{
-      WebkitMaskImage:
-        'radial-gradient(26% 22% at 68% 42%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,1) 76%)',
-      maskImage:
-        'radial-gradient(26% 22% at 68% 42%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,1) 76%)',
-    }}
-  />
+  {/* single readability gradient (keeps text readable) */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/55 to-black/85" />
 
   {/* content */}
   <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
@@ -76,28 +42,22 @@ export default function Page() {
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
 
-    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight headline-stroke">
+    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
       Road to LA 2028: Partner<br className="hidden sm:block" />
       with a Rising BMX Finalist
     </h1>
 
     <p className="mt-6 max-w-2xl text-neutral-300">
-      European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
-      Cups, and Worlds. Join the journey with authentic content, elite visibility, and
-      performance-driven storytelling.
+      European Championships Finalist (8th, 2025). Competing across UEC European
+      Cup, UCI World Cups, and Worlds. Join the journey with authentic content,
+      elite visibility, and performance-driven storytelling.
     </p>
 
     <div className="mt-8 flex flex-wrap items-center gap-4">
-      <a
-        href="#contact"
-        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
-      >
+      <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
         Become a Partner →
       </a>
-      <a
-        href="#media"
-        className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
-      >
+      <a href="#media" className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition">
         View Media
       </a>
     </div>
