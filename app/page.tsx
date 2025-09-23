@@ -136,50 +136,48 @@ export default function Page() {
 
       {/* Media Gallery */}
       <section id="media" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-semibold">Media Gallery</h2>
-            <p className="mt-2 max-w-3xl text-neutral-300">
-              High-quality action and behind-the-scenes content available for
-              partner campaigns and social amplification.
-            </p>
-          </div>
-          <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
-            Request media kit →
-          </a>
-        </div>
+  <div className="flex items-end justify-between">
+    <div>
+      <h2 className="text-2xl font-semibold">Media Gallery</h2>
+      <p className="mt-2 max-w-3xl text-neutral-300">
+        High-quality action and behind-the-scenes content available for partner campaigns and social amplification.
+      </p>
+    </div>
+    <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
+      Request media kit →
+    </a>
+  </div>
 
-        {/* CLICKABLE tiles, fixed aspect ratio, open full-size in a new tab */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "/media/action-1.jpg",
-            "/media/action-2.jpg",
-            "/media/action-3.jpg",
-            "/media/action-4.jpg",
-            "/media/behind-1.jpg",
-            "/media/behind-2.jpg",
-            "/media/behind-3.jpg",
-            "/media/lifestyle-1.jpg",
-          ].map((src, i) => (
-            <a
-              key={src}
-              href={src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block group"
-            >
-              <figure className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]">
-                <img
-                  src={`${src}?ts=1`}
-                  alt={`gallery-${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-                />
-              </figure>
-            </a>
-          ))}
-        </div>
-      </section>
+  <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {[
+      "/media/action-1.jpg",
+      "/media/action-2.jpg",
+      "/media/action-3.jpg",
+      "/media/action-4.jpg",
+      "/media/behind-1.jpg",
+      "/media/behind-2.jpg",
+      "/media/behind-3.jpg",
+      "/media/lifestyle-1.jpg",
+    ].map((src, i) => (
+      <a
+        key={src}
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        <figure className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]">
+          <img
+            src={`${src}?v=4`}
+            alt={`gallery-${i + 1}`}
+            loading="lazy"
+            className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+          />
+        </figure>
+      </a>
+    ))}
+  </div>
+</section>
 
       {/* Desired Partners */}
       <section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
