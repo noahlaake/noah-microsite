@@ -25,45 +25,29 @@ export default function Page() {
 {/* Hero */}
       <section className="relative min-h-[70vh]">
   {/* background image */}
-  <Image
-    {/* darken the whole scene a little more */}
-<div className="absolute inset-0 bg-black/60" />
-
-{/* darker toward the bottom so the text pops */}
-<div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/75 to-black/90" />
-
-{/* soft spotlight to keep Noah brighter */}
-<div className="
-  pointer-events-none absolute inset-0
-  [mask-image:radial-gradient(40%_34%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]
-">
-  <div className="absolute inset-0 [filter:brightness(1.18)]" />
-</div>
+<Image
   src="/hero_noah.jpg"
   alt="Noah Laake racing"
   fill
   priority
-  className="object-cover object-[55%_35%] select-none"
+  className="object-cover object-[55%_35%] select-none z-0"
 />
 
-  {/* readability gradient */}
-  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
+{/* darken the whole scene a little more */}
+<div className="absolute inset-0 bg-black/60 z-10" />
 
-  {/* BRIGHTEN ONLY NOAH — masked backdrop filter (natural, no white blob) */}
-  <div
-    className="absolute inset-0 pointer-events-none"
-    style={{
-      // spotlight shape & position — adjust the %s to move/resize
-      WebkitMaskImage:
-        'radial-gradient(84% 80% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
-      maskImage:
-        'radial-gradient(84% 80% at 68% 42%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 70%)',
-      // gentle brighten so it never overexposes
-      backdropFilter: 'brightness(1.60) contrast(1.03)',
-    }}
-  />
+{/* darker toward the bottom so the text pops */}
+<div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/75 to-black/90 z-10" />
 
-  {/* DARKEN OUTSIDE THE SPOTLIGHT */}
+{/* soft spotlight to keep Noah brighter */}
+<div
+  className="pointer-events-none absolute inset-0 z-10
+             [mask-image:radial-gradient(40%_34%_at_66%_48%,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.9)_100%)]"
+>
+  <div className="absolute inset-0 [filter:brightness(1.18)]" />
+</div>
+
+    {/* DARKEN OUTSIDE THE SPOTLIGHT */}
   <div
     className="absolute inset-0 pointer-events-none bg-black/55"
     style={{
@@ -75,7 +59,7 @@ export default function Page() {
   />
 
   {/* content */}
-  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+  <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
     <p className="text-xs font-semibold tracking-widest text-emerald-300">
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
