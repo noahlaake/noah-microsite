@@ -23,46 +23,80 @@ export default function Page() {
       </header>
 
 {/* Hero */}
-<section className="relative min-h-[70vh]">
-  {/* background image */}
+<section className="relative min-h-[72vh] md:min-h-[78vh]">
+  {/* Background image */}
   <Image
     src="/hero_noah.jpg"
     alt="Noah Laake racing"
     fill
     priority
-    className="object-cover object-[55%_35%] select-none"
+    className="object-cover object-[56%_42%] select-none"
   />
 
-  {/* single readability gradient (keeps text readable) */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/55 to-black/85" />
+  {/* 1) Left text band so copy is clean */}
+  <div className="absolute inset-y-0 left-0 w-[56%] bg-gradient-to-r from-black/78 via-black/40 to-transparent" />
 
-  {/* content */}
-  <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+  {/* 2) Global dark overlay WITH A HOLE over Noah (so Noah is NOT darkened) */}
+  <div
+    className="absolute inset-0 bg-black/66"
+    style={{
+      // White = visible overlay, Black = transparent (hole)
+      WebkitMaskImage:
+        'radial-gradient(56% 44% at 67% 47%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 61%, rgba(0,0,0,1) 100%)',
+      maskImage:
+        'radial-gradient(56% 44% at 67% 47%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 61%, rgba(0,0,0,1) 100%)',
+    }}
+  />
+
+  {/* 3) Bottom readability gradient */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/65 to-black/95" />
+
+  {/* 4) Brightness/contrast boost ONLY inside the spotlight */}
+  <div
+    className="pointer-events-none absolute inset-0"
+    style={{
+      // White = boosting area, Black = no effect
+      WebkitMaskImage:
+        'radial-gradient(52% 40% at 67% 47%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 100%)',
+      maskImage:
+        'radial-gradient(52% 40% at 67% 47%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 100%)',
+      backdropFilter: 'brightness(1.20) contrast(1.08) saturate(1.04)',
+    }}
+  />
+
+  {/* CONTENT */}
+  <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
     <p className="text-xs font-semibold tracking-widest text-emerald-300">
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
 
-    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-[0_3px_14px_rgba(0,0,0,0.9)]">
       Road to LA 2028: Partner<br className="hidden sm:block" />
       with a Rising BMX Finalist
     </h1>
 
-    <p className="mt-6 max-w-2xl text-neutral-300">
-      European Championships Finalist (8th, 2025). Competing across UEC European
-      Cup, UCI World Cups, and Worlds. Join the journey with authentic content,
-      elite visibility, and performance-driven storytelling.
+    <p className="mt-6 max-w-2xl text-neutral-200">
+      European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
+      Cups, and Worlds. Join the journey with authentic content, elite visibility, and
+      performance-driven storytelling.
     </p>
 
     <div className="mt-8 flex flex-wrap items-center gap-4">
-      <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition">
+      <a
+        href="#contact"
+        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+      >
         Become a Partner →
       </a>
-      <a href="#media" className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition">
+      <a
+        href="#media"
+        className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+      >
         View Media
       </a>
     </div>
 
-    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-200">
       <div className="flex items-center gap-2">
         <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
         2025 UEC Finalist
@@ -74,7 +108,7 @@ export default function Page() {
     </div>
   </div>
 </section>
-
+      
       {/* Career Highlights */}
       <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-2xl font-semibold">Career Highlights</h2>
