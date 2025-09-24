@@ -22,63 +22,32 @@ export default function Page() {
         </div>
       </header>
 
-{/* Hero */}
-<section className="relative min-h-[72vh] md:min-h-[78vh]">
-  {/* Background image */}
+{/* Hero (clean — no overlays/spotlight) */}
+<section className="relative min-h-[70vh]">
+  {/* Background image only */}
   <Image
-    src="/hero_noah.jpg"
+    src="/hero_noah.jpg"           // must be EXACTLY this name & case in /public
     alt="Noah Laake racing"
     fill
     priority
-    className="object-cover object-[56%_42%] select-none"
+    className="object-cover object-[54%_40%] select-none"
   />
 
-  {/* 1) Left text band so copy is clean */}
-  <div className="absolute inset-y-0 left-0 w-[56%] bg-gradient-to-r from-black/78 via-black/40 to-transparent" />
-
-  {/* 2) Global dark overlay WITH A HOLE over Noah (so Noah is NOT darkened) */}
-  <div
-    className="absolute inset-0 bg-black/66"
-    style={{
-      // White = visible overlay, Black = transparent (hole)
-      WebkitMaskImage:
-        'radial-gradient(56% 44% at 67% 47%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 61%, rgba(0,0,0,1) 100%)',
-      maskImage:
-        'radial-gradient(56% 44% at 67% 47%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 58%, rgba(0,0,0,1) 61%, rgba(0,0,0,1) 100%)',
-    }}
-  />
-
-  {/* 3) Bottom readability gradient */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/65 to-black/95" />
-
-  {/* 4) Brightness/contrast boost ONLY inside the spotlight */}
-  <div
-    className="pointer-events-none absolute inset-0"
-    style={{
-      // White = boosting area, Black = no effect
-      WebkitMaskImage:
-        'radial-gradient(52% 40% at 67% 47%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 100%)',
-      maskImage:
-        'radial-gradient(52% 40% at 67% 47%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 100%)',
-      backdropFilter: 'brightness(1.20) contrast(1.08) saturate(1.04)',
-    }}
-  />
-
-  {/* CONTENT */}
-  <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+  {/* Text content */}
+  <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-10">
     <p className="text-xs font-semibold tracking-widest text-emerald-300">
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
 
-    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-[0_3px_14px_rgba(0,0,0,0.9)]">
+    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
       Road to LA 2028: Partner<br className="hidden sm:block" />
       with a Rising BMX Finalist
     </h1>
 
     <p className="mt-6 max-w-2xl text-neutral-200">
-      European Championships Finalist (8th, 2025). Competing across UEC European Cup, UCI World
-      Cups, and Worlds. Join the journey with authentic content, elite visibility, and
-      performance-driven storytelling.
+      European Championships Finalist (8th, 2025). Competing across UEC European Cup,
+      UCI World Cups, and Worlds. Join the journey with authentic content, elite
+      visibility, and performance-driven storytelling.
     </p>
 
     <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -96,7 +65,7 @@ export default function Page() {
       </a>
     </div>
 
-    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-200">
+    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
       <div className="flex items-center gap-2">
         <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
         2025 UEC Finalist
