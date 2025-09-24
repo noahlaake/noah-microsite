@@ -39,14 +39,19 @@ export default function Page() {
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
 
-    <h1 className="mt-4 font-extrabold leading-tight text-white headline-stroke">
-  <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
+    <h1 className="mt-4 font-extrabold leading-[1.05] tracking-tight text-white">
+  {/* Line 1 */}
+  <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
     Road to LA 2028
   </span>
-  <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
+
+  {/* Line 2 — intentionally smaller to fit one line */}
+  <span className="block text-[30px] sm:text-[38px] lg:text-[44px] whitespace-nowrap">
     Partner with a Rising
   </span>
-  <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
+
+  {/* Line 3 */}
+  <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
     BMX Finalist
   </span>
 </h1>
