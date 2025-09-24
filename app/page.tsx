@@ -34,7 +34,7 @@ export default function Page() {
   />
 
   {/* Text content */}
-  <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+  <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-10 sm:pb-12">
     <p className="text-xs font-semibold tracking-widest text-emerald-300">
       U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
     </p>
@@ -91,7 +91,7 @@ export default function Page() {
 </section>
       
       {/* Career Highlights */}
-      <section id="results" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="results" className="relative z-10 -mt-6 sm:-mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
         <h2 className="text-2xl font-semibold">Career Highlights</h2>
         <p className="mt-3 max-w-3xl text-neutral-300">
           A clear progression from national champion to European finalist — with
@@ -119,7 +119,7 @@ export default function Page() {
       </section>
 
       {/* Media Gallery */}
-      <section id="media" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="media" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
   <div className="flex items-end justify-between">
     <div>
       <h2 className="text-2xl font-semibold">Media Gallery</h2>
@@ -132,7 +132,7 @@ export default function Page() {
     </a>
   </div>
 
-  <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
     {[
       "/media/action-1.jpg",
       "/media/action-2.jpg",
