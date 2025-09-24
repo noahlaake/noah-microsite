@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -13,7 +14,6 @@ export default function Page() {
               NOAH RAPHAEL LAAKE
             </span>
           </div>
-
           <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
             <a href="#results" className="hover:text-white">Results</a>
             <a href="#media" className="hover:text-white">Media</a>
@@ -23,83 +23,79 @@ export default function Page() {
         </div>
       </header>
 
-{/* Hero (clean — no overlays/spotlight) */}
-<section className="relative min-h-[70vh]">
-  {/* Background image only */}
-  <Image
-    src="/hero_noah.jpg"           // must be EXACTLY this name & case in /public
-    alt="Noah Laake racing"
-    fill
-    priority
-    className="object-cover object-[54%_40%] select-none"
-  />
+      {/* Hero (clean — just the photo + text) */}
+      <section className="relative min-h-[70vh]">
+        <Image
+          src="/hero_noah.jpg"
+          alt="Noah Laake racing"
+          fill
+          priority
+          className="object-cover object-[54%_40%] select-none"
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-10 sm:pb-12">
+          <p className="text-xs font-semibold tracking-widest text-emerald-300">
+            U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
+          </p>
 
-  {/* Text content */}
-  <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-10 sm:pb-12">
-    <p className="text-xs font-semibold tracking-widest text-emerald-300">
-      U23 • LATVIAN NATIONAL TEAM • OLYMPIC UNIT
-    </p>
+          {/* Headline in 3 lines; middle smaller to stay on one line */}
+          <h1 className="mt-4 font-extrabold leading-[1.05] tracking-tight text-white">
+            <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
+              Road to LA 2028
+            </span>
+            <span className="block text-[30px] sm:text-[38px] lg:text-[44px] whitespace-nowrap">
+              Partner with a Rising
+            </span>
+            <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
+              BMX Finalist
+            </span>
+          </h1>
 
-    <h1 className="mt-4 font-extrabold leading-[1.05] tracking-tight text-white">
-  {/* Line 1 */}
-  <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
-    Road to LA 2028
-  </span>
+          <p className="mt-6 max-w-2xl text-neutral-200">
+            European Championships Finalist (8th, 2025). Competing across UEC
+            European Cup, UCI World Cups, and Worlds. Join the journey with
+            authentic content, elite visibility, and performance-driven
+            storytelling.
+          </p>
 
-  {/* Line 2 — intentionally smaller to fit one line */}
-  <span className="block text-[30px] sm:text-[38px] lg:text-[44px] whitespace-nowrap">
-    Partner with a Rising
-  </span>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+            >
+              Become a Partner →
+            </a>
+            <a
+              href="#media"
+              className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
+            >
+              View Media
+            </a>
+          </div>
 
-  {/* Line 3 */}
-  <span className="block text-[44px] sm:text-[56px] lg:text-[72px]">
-    BMX Finalist
-  </span>
-</h1>
+          <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
+            <div className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+              2025 UEC Finalist
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+              Content-ready athlete
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <p className="mt-6 max-w-2xl text-neutral-200">
-      European Championships Finalist (8th, 2025). Competing across UEC European Cup,
-      UCI World Cups, and Worlds. Join the journey with authentic content, elite
-      visibility, and performance-driven storytelling.
-    </p>
-
-    <div className="mt-8 flex flex-wrap items-center gap-4">
-      <a
-        href="#contact"
-        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-medium text-neutral-900 hover:bg-emerald-400 transition"
+      {/* Career Highlights (tightened) */}
+      <section
+        id="results"
+        className="relative z-10 -mt-6 sm:-mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12"
       >
-        Become a Partner →
-      </a>
-      <a
-        href="#media"
-        className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-900 transition"
-      >
-        View Media
-      </a>
-    </div>
-
-    <div className="mt-6 flex items-center gap-6 text-sm text-neutral-300">
-      <div className="flex items-center gap-2">
-        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-        2025 UEC Finalist
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-        Content-ready athlete
-      </div>
-    </div>
-  </div>
-</section>
-      
-      {/* Career Highlights */}
-      <section id="results" className="relative z-10 -mt-6 sm:-mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-        <h2 className="text-2xl font-semibold">Career Highlights</h2>
-        <p className="mt-3 max-w-3xl text-neutral-300">
+        <h2 className="text-2xl font-semibold mb-4">Career Highlights</h2>
+        <p className="mt-1 max-w-3xl text-neutral-300">
           A clear progression from national champion to European finalist — with
           eyes on World Cups, Worlds 2026 (Australia), and LA 2028 qualification.
         </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             ["2025", "UEC BMX Racing European Championships — U23 Final (8th)"],
             ["2024–2025", "Multiple European Cup mains & semis; World Cup debut (Papendal)"],
@@ -111,7 +107,6 @@ export default function Page() {
             </div>
           ))}
         </div>
-
         <div className="mt-6">
           <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
             Request full results →
@@ -119,91 +114,92 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Media Gallery */}
+      {/* Media Gallery (tight) */}
       <section id="media" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-  <div className="flex items-end justify-between">
-    <div>
-      <h2 className="text-2xl font-semibold">Media Gallery</h2>
-      <p className="mt-2 max-w-3xl text-neutral-300">
-        High-quality action and behind-the-scenes content available for partner campaigns and social amplification.
-      </p>
-    </div>
-    <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
-      Request media kit →
-    </a>
-  </div>
+        <div className="flex items-end justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Media Gallery</h2>
+            <p className="mt-1 max-w-3xl text-neutral-300">
+              High-quality action and behind-the-scenes content available for
+              partner campaigns and social amplification.
+            </p>
+          </div>
+          <a href="#contact" className="text-emerald-400 hover:text-emerald-300">
+            Request media kit →
+          </a>
+        </div>
 
-  <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-    {[
-      "/media/action-1.jpg",
-      "/media/action-2.jpg",
-      "/media/action-3.jpg",
-      "/media/action-4.jpg",
-      "/media/behind-1.jpg",
-      "/media/behind-2.jpg",
-      "/media/behind-3.jpg",
-      "/media/lifestyle-1.jpg",
-    ].map((src, i) => (
-      <a
-        key={src}
-        href={src}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block"
-      >
-        <figure className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3]">
-          <img
-            src={`${src}?v=4`}
-            alt={`gallery-${i + 1}`}
-            loading="lazy"
-            className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-          />
-        </figure>
-      </a>
-    ))}
-  </div>
-</section>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            "/media/action-1.jpg",
+            "/media/action-2.jpg",
+            "/media/action-3.jpg",
+            "/media/action-4.jpg",
+            "/media/behind-1.jpg",
+            "/media/behind-2.jpg",
+            "/media/behind-3.jpg",
+            "/media/lifestyle-1.jpg",
+          ].map((src, i) => (
+            <a
+              key={src}
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3] overflow-hidden"
+            >
+              <img
+                src={src}
+                alt={`gallery-${i + 1}`}
+                loading="lazy"
+                className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                decoding="async"
+              />
+            </a>
+          ))}
+        </div>
+      </section>
 
-     {/* Desired Partners */}
-<section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-  <h2 className="text-2xl font-semibold">Desired Partners</h2>
-  <p className="mt-2 max-w-3xl text-neutral-300">
-    Room for 1 Title, 3–5 Core, and several Starter partners — with tiered deliverables and clear placement mockups.
-  </p>
+      {/* Desired Partners — with PNG logos */}
+      <section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-semibold mb-4">Desired Partners</h2>
+        <p className="mt-1 max-w-3xl text-neutral-300">
+          Room for 1 Title, 3–5 Core, and several Starter partners — with tiered
+          deliverables and clear placement mockups.
+        </p>
 
- {/* --- LOGO CARDS --- */}
-<div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  {[
-    { name: "Bell Helmets",    slug: "bell-helmets",    href: "#" },
-    { name: "Speedco Bikes",   slug: "speedco-bikes",   href: "#" },
-    { name: "Fly Racing Gear", slug: "fly-racing",      href: "#" },
-    { name: "Nike Sportswear", slug: "nike-sportswear", href: "#" },
-    { name: "Red Bull",        slug: "red-bull",        href: "#" },
-    { name: "Decathlon",       slug: "decathlon",       href: "#" },
-    { name: "Audi quattro",    slug: "audi-quattro",    href: "#" },
-  ].slice(0, 6).map((p) => (
-    <a
-      key={p.slug}
-      href={p.href}
-      className="rounded-2xl border border-neutral-800 p-4 flex items-center gap-4 hover:bg-neutral-900/40 transition"
-    >
-      <img
-        src={`/logos/${p.slug}.png`}   // <-- .png
-        alt={`${p.name} logo`}
-        className="h-7 w-auto object-contain"
-        loading="lazy"
-        decoding="async"
-      />
-      <div>
-        <div className="text-neutral-100">{p.name}</div>
-        <div className="text-sm text-neutral-400">Prospective partner</div>
-      </div>
-    </a>
-  ))}
-</div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { name: "Bell Helmets",    slug: "bell-helmets",    href: "#" },
+            { name: "Speedco Bikes",   slug: "speedco-bikes",   href: "#" },
+            { name: "Fly Racing Gear", slug: "fly-racing",      href: "#" },
+            { name: "Nike Sportswear", slug: "nike-sportswear", href: "#" },
+            { name: "Red Bull",        slug: "red-bull",        href: "#" },
+            { name: "Decathlon",       slug: "decathlon",       href: "#" },
+            { name: "Audi quattro",    slug: "audi-quattro",    href: "#" },
+          ].map((p) => (
+            <a
+              key={p.slug}
+              href={p.href}
+              className="rounded-2xl border border-neutral-800 p-4 flex items-center gap-4 hover:bg-neutral-900/40 transition"
+            >
+              <img
+                src={`/logos/${p.slug}.png`}
+                alt={`${p.name} logo`}
+                className="h-7 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <div className="text-neutral-100">{p.name}</div>
+                <div className="text-sm text-neutral-400">Prospective partner</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="rounded-2xl border border-neutral-800 p-8 bg-neutral-900/40">
           <h2 className="text-2xl font-semibold">Let’s talk</h2>
           <p className="mt-2 max-w-2xl text-neutral-300">
