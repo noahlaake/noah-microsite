@@ -192,11 +192,12 @@ export default function Page() {
         <picture>
           <source srcSet={`/logos/${p.slug}.svg`} type="image/svg+xml" />
           <img
-            src={`/logos/${p.slug}.png`}
-            alt={`${p.name} logo`}
-            className="h-10 w-auto object-contain"
-            loading="lazy"
-          />
+  src={`/logos/${p.slug}.png`}   // <— change to .png
+  alt={`${p.name} logo`}
+  className="h-7 w-auto object-contain"
+  loading="lazy"
+  decoding="async"
+/>
         </picture>
 
         <div>
