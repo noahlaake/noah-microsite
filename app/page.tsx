@@ -163,31 +163,50 @@ export default function Page() {
   </div>
 </section>
 
-      {/* Desired Partners */}
-      <section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl font-semibold">Desired Partners</h2>
-        <p className="mt-2 max-w-3xl text-neutral-300">
-          Room for 1 Title, 3–5 Core, and several Starter partners — with tiered
-          deliverables and clear placement mockups.
-        </p>
+     {/* Desired Partners */}
+<section id="partners" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+  <h2 className="text-2xl font-semibold">Desired Partners</h2>
+  <p className="mt-2 max-w-3xl text-neutral-300">
+    Room for 1 Title, 3–5 Core, and several Starter partners — with tiered deliverables and clear placement mockups.
+  </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            "Bell Helmets",
-            "Speedco Bikes",
-            "Fly Racing Gear",
-            "Nike Sportswear",
-            "Red Bull",
-            "Decathlon",
-            "Audi quattro",
-          ].map((name) => (
-            <div key={name} className="rounded-2xl border border-neutral-800 p-6">
-              <div className="text-neutral-100">{name}</div>
-              <div className="mt-1 text-sm text-neutral-400">Prospective partner</div>
-            </div>
-          ))}
+  {/* --- LOGO CARDS --- */}
+  <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {[
+      { name: "Bell Helmets", slug: "bell-helmets", href: "#" },
+      { name: "Speedco Bikes", slug: "speedco-bikes", href: "#" },
+      { name: "Fly Racing Gear", slug: "fly-racing", href: "#" },
+      { name: "Nike Sportswear", slug: "nike-sportswear", href: "#" },
+      { name: "Red Bull", slug: "red-bull", href: "#" },
+      { name: "Decathlon", slug: "decathlon", href: "#" },
+      { name: "Audi quattro", slug: "audi-quattro", href: "#" },
+    ].map((p) => (
+      <a
+        key={p.slug}
+        href={p.href}
+        target={p.href.startsWith("http") ? "_blank" : undefined}
+        rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className="rounded-2xl border border-neutral-800 p-6 flex items-center gap-4 hover:border-neutral-700 transition"
+      >
+        {/* Try SVG first; PNG will be used if SVG isn't present */}
+        <picture>
+          <source srcSet={`/logos/${p.slug}.svg`} type="image/svg+xml" />
+          <img
+            src={`/logos/${p.slug}.png`}
+            alt={`${p.name} logo`}
+            className="h-10 w-auto object-contain"
+            loading="lazy"
+          />
+        </picture>
+
+        <div>
+          <div className="text-neutral-100">{p.name}</div>
+          <div className="text-sm text-neutral-400">Prospective partner</div>
         </div>
-      </section>
+      </a>
+    ))}
+  </div>
+</section>
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
