@@ -19,7 +19,7 @@ export default function Page() {
 
           {/* right: nav + socials */}
           <div className="hidden md:flex items-center gap-4">
-            <nav className="flex items-center gap-6 text-sm text-neutral-300">
+            <nav className="flex items-center gap-6 text-[0.95rem] text-neutral-300">
               <a href="#results" className="hover:text-white">Results</a>
               <a href="#media" className="hover:text-white">Media</a>
               <a href="#partners" className="hover:text-white">Partners</a>
