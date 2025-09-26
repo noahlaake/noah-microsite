@@ -1,27 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
+import SocialBar from "../components/SocialBar";
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
       {/* Top nav */}
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 bg-neutral-950/80 border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block h-4 w-4 rounded-full bg-emerald-400" />
-            <span className="text-sm text-neutral-300 tracking-widest">
-              NOAH RAPHAEL LAAKE
-            </span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-            <a href="#results" className="hover:text-white">Results</a>
-            <a href="#media" className="hover:text-white">Media</a>
-            <a href="#partners" className="hover:text-white">Partners</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
-          </nav>
-        </div>
-      </header>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+    {/* left side: dot + name */}
+    <div className="flex items-center gap-2">
+      <span className="inline-block h-4 w-4 rounded-full bg-emerald-400" />
+      <span className="text-sm text-neutral-300 tracking-widest">
+        NOAH RAPHAEL LAAKE
+      </span>
+    </div>
+
+    {/* right side: nav + social icons */}
+   <div className="hidden md:flex items-center gap-4">
+  <nav className="flex items-center gap-6 text-sm text-neutral-300">
+    <a href="#results" className="hover:text-white">Results</a>
+    <a href="#media" className="hover:text-white">Media</a>
+    <a href="#partners" className="hover:text-white">Partners</a>
+    <a href="#contact" className="hover:text-white">Contact</a>
+  </nav>
+  <SocialBar />
+</div>
 
       {/* Hero (clean — just the photo + text) */}
       <section className="relative min-h-[70vh]">
