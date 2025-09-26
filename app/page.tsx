@@ -12,9 +12,9 @@ export default function Page() {
           {/* left: dot + name */}
           <div className="flex items-center gap-2">
             <span className="inline-block h-4 w-4 rounded-full bg-emerald-400" />
-            <span className="text-sm text-neutral-300 tracking-widest">
-              NOAH RAPHAEL LAAKE
-            </span>
+            <span className="text-[0.97rem] text-neutral-300 tracking-widest">
+  NOAH RAPHAEL LAAKE
+</span>
           </div>
 
           {/* right: nav + socials */}
@@ -154,13 +154,14 @@ export default function Page() {
               rel="noopener noreferrer"
               className="group block rounded-2xl border border-neutral-800 bg-neutral-900/30 aspect-[4/3] overflow-hidden"
             >
-              <img
-                src={src}
-                alt={`gallery-${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-                decoding="async"
-              />
+        <img
+  src={src}
+  alt={`gallery-${i + 1}`}
+  loading="lazy"
+  className={`h-56 w-full object-cover transition group-hover:scale-105 ${
+    i === 6 ? "object-[50%_10%]" : ""
+  }`}
+/>
             </a>
           ))}
         </div>
