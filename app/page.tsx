@@ -12,7 +12,7 @@ export default function Page() {
           {/* left: dot + name */}
           <div className="flex items-center gap-2">
             <span className="inline-block h-4 w-4 rounded-full bg-emerald-400" />
-            <span className="text-[0.97rem] text-neutral-300 tracking-widest">
+            <span className="text-[1.2rem] text-neutral-300 tracking-widest">
   NOAH RAPHAEL LAAKE
 </span>
           </div>
